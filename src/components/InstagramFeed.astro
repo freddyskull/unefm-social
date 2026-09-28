@@ -1,0 +1,95 @@
+---
+import { instagramPosts, instagramProfileUrl } from '../data/instagram-posts';
+---
+
+<section id="instagram" class="py-16 sm:py-24 relative z-10 bg-slate-100/70 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div>
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold bg-pink-100 text-pink-900 border border-pink-300 uppercase tracking-widest mb-3">
+          📸 Instagram Oficial
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Lo Último en <span class="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-600 bg-clip-text text-transparent">@unefmoficial</span>
+        </h2>
+        <p class="mt-2 text-slate-600 text-sm max-w-xl">
+          Publicaciones recientes, cobertura de actos de grado, vida estudiantil e investigación en tiempo real.
+        </p>
+      </div>
+
+      <a
+        href={instagramProfileUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-purple-700 via-pink-600 to-amber-600 text-white shadow-lg shadow-pink-600/20 hover:scale-105 transition-all self-start md:self-auto shrink-0"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1.4" fill="currentColor"/>
+        </svg>
+        <span>Seguir en Instagram</span>
+      </a>
+    </div>
+
+    <!-- Feed Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {instagramPosts.map((post) => (
+        <div class="glass-card p-4 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between group hover:border-pink-500 shadow-sm hover:shadow-lg transition-all">
+          <blockquote
+            class="instagram-media rounded-xl overflow-hidden w-full bg-white"
+            data-instgrm-permalink={post.permalink}
+            data-instgrm-version="14"
+          >
+            <div class="p-4 text-center">
+              <a
+                href={post.permalink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-bold text-pink-700 hover:text-pink-900 underline"
+              >
+                Cargando publicación en Instagram...
+              </a>
+            </div>
+          </blockquote>
+
+          {post.caption && (
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-start gap-2.5">
+              <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-purple-600 to-amber-500 p-0.5 shrink-0 mt-0.5 shadow-xs">
+                <img src="/logo.webp" alt="UNEFM" class="w-full h-full object-contain rounded-full bg-white p-0.5" />
+              </div>
+              <p class="text-xs text-slate-700 leading-relaxed font-medium line-clamp-2">
+                {post.caption}
+              </p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  function initInstagramEmbeds() {
+    if ((window as any).instgrm) {
+      (window as any).instgrm.Embeds.process();
+    } else {
+      const script = document.createElement('script');
+      script.src = 'https://www.instagram.com/embed.js';
+      script.async = true;
+      script.onload = () => {
+        if ((window as any).instgrm) {
+          (window as any).instgrm.Embeds.process();
+        }
+      };
+      document.body.appendChild(script);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initInstagramEmbeds);
+  } else {
+    initInstagramEmbeds();
+  }
+</script>

@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title ?? 'UNEFM · Portal Oficial de Redes y Servicios Universitarios';
+const pageDescription =
+  description ?? 'Portal institucional de la Universidad Nacional Experimental Francisco de Miranda (UNEFM). Accesos a pregrado, control de estudios, postgrado y redes sociales oficiales.';
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={pageDescription} />
+    <meta name="theme-color" content="#1e40af" />
+    <link rel="icon" type="image/svg+xml" href="/unefm-crest.png" />
+    <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script async src="//www.instagram.com/embed.js" data-instgrm></script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen selection:bg-blue-600 selection:text-white flex flex-col">
+    <slot />
+  </body>
+</html>

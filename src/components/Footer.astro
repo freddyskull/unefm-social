@@ -1,0 +1,140 @@
+---
+import { university } from "../data/socials";
+---
+
+<footer
+  class="bg-blue-950 text-slate-200 border-t-4 border-amber-500 pt-16 pb-12 relative z-10 text-xs"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-blue-900/80"
+    >
+      <!-- Brand & Mission -->
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-3.5">
+          <div
+            class="h-16 bg-white p-1 rounded-xl shadow-md inline-flex items-center"
+          >
+            <img
+              src="/logo.webp"
+              alt="Logo UNEFM"
+              class="h-full w-auto object-contain"
+            />
+          </div>
+        </div>
+        <p class="text-slate-300 text-xs leading-relaxed max-w-md">
+          {university.name}. Institución pública autónoma de educación superior
+          dedicada a la formación integral de profesionales con vocación
+          científica, humanística e innovadora.
+        </p>
+        <p class="text-[11px] text-slate-400 font-medium">
+          📍 {university.rectorate}.
+        </p>
+      </div>
+
+      <!-- Quick Portals Links (Verified 200 OK) -->
+      <div>
+        <h4
+          class="font-display font-bold text-white text-sm mb-4 uppercase tracking-wider"
+        >
+          Portales Académicos
+        </h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a
+              href="https://pregrado.unefm.net"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              <span>Portal de Pregrado</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://estudiantes.unefm.edu.ve"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              <span>Control de Estudios</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://postgrado.unefm.net"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              <span>Decanato de Postgrado</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://planificacion.unefm.edu.ve"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              <span>Dirección de Planificación</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Institutional Media (Verified 200 OK) -->
+      <div>
+        <h4
+          class="font-display font-bold text-white text-sm mb-4 uppercase tracking-wider"
+        >
+          Redes Oficiales
+        </h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a
+              href="https://www.instagram.com/unefmoficial/"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+              <span>Instagram @unefmoficial</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/unefmoficial"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              <span>Facebook UNEFM Oficial</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright & Disclaimer -->
+    <div
+      class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-slate-400 text-[11px]"
+    >
+      <p>
+        © {new Date().getFullYear()}
+        {university.name}. Santa Ana de Coro, Estado Falcón, Venezuela.
+      </p>
+      <p class="flex items-center gap-2">
+        <span
+          class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+        ></span>
+        <span>Servidor Institucional Activo</span>
+      </p>
+    </div>
+  </div>
+</footer>

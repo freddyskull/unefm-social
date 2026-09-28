@@ -1,0 +1,71 @@
+---
+import { university } from '../data/socials';
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+  <!-- Top Corporate Announcement Bar -->
+  <div class="bg-blue-950 py-2 px-4 text-xs font-medium text-slate-200 border-b border-blue-900">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-extrabold bg-amber-500 text-slate-950 uppercase tracking-wider">
+          PORTAL OFICIAL
+        </span>
+        <span class="font-semibold text-white">{university.name}</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-slate-300">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          {university.city}
+        </span>
+        <span class="text-blue-800">|</span>
+        <span class="text-amber-300 font-bold tracking-wide">{university.slogan}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+    <!-- Brand Logo (Clean, no text next to it) -->
+    <a href="#" class="flex items-center group py-1">
+      <img
+        src="/logo.webp"
+        alt="Logo UNEFM"
+        class="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-xs"
+      />
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-1 bg-slate-100 p-1.5 rounded-full border border-slate-200">
+      <a href="#redes" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-blue-800 hover:bg-white rounded-full transition-all shadow-xs">
+        Redes & Portales
+      </a>
+      <a href="#areas" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-blue-800 hover:bg-white rounded-full transition-all shadow-xs">
+        Áreas Académicas
+      </a>
+      <a href="#instagram" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-blue-800 hover:bg-white rounded-full transition-all shadow-xs">
+        Lo Último
+      </a>
+      <a href="#preguntas" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-blue-800 hover:bg-white rounded-full transition-all shadow-xs">
+        Preguntas
+      </a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-3">
+      <a
+        href="http://estudiantes.unefm.edu.ve"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-blue-700 hover:bg-blue-800 text-white shadow-md shadow-blue-700/20 hover:scale-[1.02] transition-all border border-blue-600"
+      >
+        <svg class="w-4 h-4 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+        <span>Portal Alumnos</span>
+      </a>
+    </div>
+  </div>
+</header>
