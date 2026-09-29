@@ -4,6 +4,7 @@ services:
     image: unefm-social:latest
     container_name: unefm-social
     init: true
-    ports:
-      - "8082:80"
+    # Sin `ports`: el portal se sirve por https://unefm.edu.ve a traves de
+    # unefm-gateway. Antes estabapublicado en 8082, lo que permitia saltarse
+    # el gateway y el certificado TLS.
     restart: unless-stopped
